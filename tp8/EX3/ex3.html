@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire de Contact Minimal</title>
+</head>
+<body>
+
+    <h1>Contactez-nous</h1>
+    
+
+    <form action="varaible.php" method="POST">
+        <p>
+            <label for="nom">Nom :</label><br>
+            <input type="text" id="nom" name="nom" required value="nom">
+        </p>
+        <p>
+            <label for="email">Email :</label><br>
+            <input type="email" id="email" name="email" required value="email">
+        </p>
+        <p>
+            <label for="message">Message :</label><br>
+            <textarea id="message" name="message" rows="5" required></textarea>
+        </p>
+        <p>
+            <button type="submit">Envoyer le message</button>
+        </p>
+    </form>
+
+</body>
+</html>

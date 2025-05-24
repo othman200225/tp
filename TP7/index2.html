@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TP formulaire avec du php</title>
+</head>
+<body>
+    <h1>TP formulaire avec du php</h1>
+
+    <form action="traitement.php" method="post">
+        <p>
+            <label for="civilite">Mme</label>
+            <select id="civilite" name="civilite">
+                <option value="mme">Mme</option>
+                <option value="mr">M.</option>
+            </select>
+            <label for="nom">Nom :</label>
+            <input type="text" id="nom" name="nom" placeholder="Entrez votre nom" required>
+        </p>
+
+        <p>
+            <label for="prenom">Prénom :</label>
+            <input type="text" id="prenom" name="prenom" placeholder="Entrez votre prénom" required>
+        </p>
+
+        <p>
+            <label for="annee_naissance">Votre année de naissance :</label>
+            <input type="text" id="annee_naissance" name="annee_naissance" value="2019" required>
+        </p>
+
+        <p>
+            <label for="identifiant">Donnez un identifiant :</label>
+            <input type="text" id="identifiant" name="identifiant" value="id" required>
+        </p>
+
+        <p>
+            <label for="mot_de_passe">Donnez un mot de passe :</label>
+            <input type="password" id="mot_de_passe" name="mot_de_passe" value="mot de passe" required>
+        </p>
+
+        <p>
+            Sexe :
+            <input type="radio" id="masculin" name="sexe" value="masculin" checked>
+            <label for="masculin">Masculin</label>
+            <input type="radio" id="feminin" name="sexe" value="feminin">
+            <label for="feminin">Féminin</label>
+        </p>
+
+        <p>
+            <input type="checkbox" id="debut_php" name="debut_php" value="oui" checked>
+            <label for="debut_php">Je débute en PHP</label>
+        </p>
+
+        <p>
+            <button type="submit">Envoyer</button>
+        </p>
+    </form>
+</body>
+</html>s

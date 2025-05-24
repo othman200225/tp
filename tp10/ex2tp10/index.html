@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion des Exercices (CRUD)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Gestion des Exercices</h1>
+
+        <?php if ($message): // Afficher les messages de succès ou d'erreur ?>
+            <div class="message <?php echo $message_type; ?>">
+                <?php echo $message; ?>
+            </div>
+        <?php endif; ?>
+
+        <div class="form-section">
+            <h2>Ajouter un nouvel exercice</h2>
+            <form action="Zindex.php" method="POST">
+                <input type="hidden" name="action" value="add">
+                <div class="form-group">
+                    <label for="titre">Titre :</label>
+                    <input type="text" id="titre" name="titre" required>
+                </div>
+                <div class="form-group">
+                    <label for="auteur">Auteur :</label>
+                    <input type="text" id="auteur" name="auteur" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Ajouter l'exercice</button>
+            </form>
+        </div>
+
+        <hr>
+
+        <div class="list-section">
+            <h2>Liste des exercices</h2>
+            <?php if (empty($exercices)): ?>
+                <p>Aucun exercice enregistré pour le moment.</p>
+            <?php else: ?>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Titre</th>
+                            <th>Auteur</th>
+                            <th>Date de Création</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach ($exercices as $exercice): ?>
+                            <tr>
+                                <td><?php echo htmlspecialchars($exercice['id']); ?></td>
+                                <td><?php echo htmlspecialchars($exercice['titre']); ?></td>
+                                <td><?php echo htmlspecialchars($exercice['auteur']); ?></td>
+                                <td><?php echo htmlspecialchars($exercice['date_creation']); ?></td>
+                                <td class="actions">
+                                    <a href="modifier.php?id=<?php echo htmlspecialchars($exercice['id']); ?>" class="btn btn-warning">Modifier</a>
+                                    <a href="index.php?action=delete&id=<?php echo htmlspecialchars($exercice['id']); ?>"
+                                       onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet exercice ?');"
+                                       class="btn btn-danger">Supprimer</a>
+                                </td>
+                            </tr>
+                        <?php endforeach; ?>
+                    </tbody>
+                </table>
+            <?php endif; ?>
+        </div>
+    </div>
+</body>
+</html>

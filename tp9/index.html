@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Formulaire TP PHP</title>
+    <link rel="stylesheet" href="style.css"> <link rel="icon" type="image/png" href="ico.png"> </head>
+<body>
+    <h1>Bienvenue sur notre formulaire !</h1>
+
+    <form action="reponse.php" method="POST">
+        <p>
+            <label for="nom">Nom :</label>
+            <input type="text" id="nom" name="nom" required>
+        </p>
+        <p>
+            <label for="prenom">Prénom :</label>
+            <input type="text" id="prenom" name="prenom" required>
+        </p>
+        <p>
+            <label for="mdp">Mot de passe :</label>
+            <input type="password" id="mdp" name="mdp" required>
+        </p>
+        <p>
+            <input type="submit" value="Envoyer les données">
+        </p>
+    </form>
+
+</body>
+</html>
